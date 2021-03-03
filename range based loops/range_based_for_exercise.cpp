@@ -9,18 +9,12 @@ int main()
     {
         {"drinks",{"water", "milk", "juice"}},
         {"fruits",{"apple", "grapes"}},
-        {"vegtables",{"carrot", "pottato", "cucumber"}}
+        {"vegetables",{"carrot", "potato", "cucumber"}}
     };
 
     //use range-based for loop to print all data to screen:
     // drinks: water milk juice 
     // fruits: apple grapes
-    // vegtables: carrot pottato cucumber
-    for(auto i : foodNames){
-        std::cout<<i.first<<": ";
-        for(auto j : i.second){
-            std::cout<<j<<" ";
-        }
-        std::cout<<std::endl;
-    }
-}
+    // vegetables: carrot potato cucumber
+ }
+
