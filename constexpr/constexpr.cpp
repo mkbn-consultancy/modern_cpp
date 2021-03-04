@@ -1,16 +1,24 @@
 #include <iostream>
 
+//------------------------------------------------
+//c++03 ways to declare constant values:
 const int val = 3;
 enum {FIRST = 0, SECOND = 1, THIRD=val};
 
 int arr[val];
 
-int function1() { return 5; }
+int getNumber_nc() { return 5; }
 
-//int arr2[function1()]; //won't compile even if function always returns 5
+//int arr2[getNumber_nc()]; //won't compile even if function always returns 5
+const int i = getNumber_nc();  //i will be initialized at run time and not compile time!
 
-constexpr int function2() { return 5; }
-int arr2[function2()];
+//------------------------------------------------
+//C++11: constexpr
+
+constexpr int getNumber() { return 5; }
+int arr2[getNumber()];
+
+constexpr int j = getNumber_nc(); //ERROR!
 
 constexpr int function3(){
     int x = 3;
