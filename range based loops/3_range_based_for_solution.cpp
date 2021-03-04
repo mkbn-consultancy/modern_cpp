@@ -1,4 +1,4 @@
-#include <iostream>
+   #include <iostream>
 #include <map>
 #include <vector>
 #include <string>
@@ -16,5 +16,12 @@ int main()
     // drinks: water milk juice 
     // fruits: apple grapes
     // vegetables: carrot potato cucumber
- }
-
+ 
+    for(auto i : foodNames){
+        std::cout<<i.first<<": ";
+        for(auto j : i.second){
+            std::cout<<j<<" ";
+        }
+        std::cout<<std::endl;
+    }
+}

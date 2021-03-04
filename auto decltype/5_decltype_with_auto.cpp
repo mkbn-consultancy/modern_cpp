@@ -45,16 +45,18 @@ void testAutoDecltype()
    struct A { int i = 0 ; int& value() { return i ; } } a;
    struct B { int i = 0 ; int value() { return i ; } } b;
 
-   //Error: a.value() returns int& but foo(a) returns r-value.
    //foo(a) = 20;
+        //Error: a.value() returns int& but foo(a) returns r-value.
+   
    //Fine: b.value() returns int and foo(b) is also int.
    foo(b);
 
    //Fine: a.value() returns int& and bar's return value is auto& this int& (lvalue).
    bar(a) = 20;
-   //Error: b.value() returns int and bar's return value is int&, 
-   //       but we cannot return reference to local variable
+   
    //bar(b) ; // *** error: auto& always deduces to a reference
+        //Error: b.value() returns int and bar's return value is int&, 
+        //       but we cannot return reference to local variable
 
    //the return value of foobar is always as the return type of t.value()
    foobar(a) = 20 ; // Fine: expression evaluates to lvalue of type int

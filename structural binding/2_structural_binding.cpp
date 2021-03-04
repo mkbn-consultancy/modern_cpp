@@ -54,6 +54,17 @@ void solution_4(){
 	}
 }
 
+std::pair<std::string, bool> read( DbHhandler* h);
+
+int main()
+{
+    DbHhandler db;
+	auto rs = read(&db);
+	if( rs.second){
+	  process(rs.first);
+	}
+}
+
 int main()
 {
     

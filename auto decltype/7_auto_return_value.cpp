@@ -1,3 +1,5 @@
+#include <iostream>
+
 //C++03 style
 struct Foo1{
 	int val() const{
@@ -25,10 +27,16 @@ struct Foo2{
 		return _m;
 	}
 private:
-	int _m;
+	int _m = 0;
 };
 
 int main()
 {
-
+	Foo2 f;
+	auto& cref = f.cref();
+	//cref++; //Error!
+	auto& mref = f.mref();
+	std::cout<<f.val()<<std::endl;
+	mref++;
+	std::cout<<f.val()<<std::endl;
 }

@@ -18,7 +18,13 @@ auto j = table.find( "42" );
 //---------------------------------------------------------------------------------
 // Motivation for auto 2: sometimes we cannot know the type, only the compiler will know
 
-auto getLambda() -> decltype([](){std::cout<<"Hello World";}){
+// auto getLambda() -> decltype([](){std::cout<<"Hello World";}){ //compilation error!!
+//     //lambda expression type is unpecified
+//     return ([](){std::cout<<"Hello World";});
+// }
+
+//instead we can declare it like that:
+auto getLambda(){
     //lambda expression type is unpecified
     return ([](){std::cout<<"Hello World";});
 }

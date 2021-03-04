@@ -1,10 +1,13 @@
 #include <iostream>
 struct X;
-struct Y { operator X(); };
+struct Y { 
+  operator X(); 
+};
 
 struct X { 
   X() { }
   X(const Y&) { std::cout << "Direct initialization" << '\n'; }
+
   X(const X&) { std::cout << "Copy ctor" << '\n'; }
 };
 
@@ -20,10 +23,10 @@ int main() {
 
     int i = 1;
 
-    f(i);    // calls f(int&) 
+    // f(i);    // calls f(int&) 
 
 
   Y y;
   X x1 = y;
-//  X x2(y);
+  // X x2(y);
 }

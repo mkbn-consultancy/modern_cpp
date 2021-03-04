@@ -1,12 +1,5 @@
 #include <iostream>
 
-template <auto n>
-struct B
-{
-    
-};
-
-
 template <typename Type, Type value> constexpr Type constant1 = value;
 constexpr auto const IntConstant42_a = constant1<int, 42>;
 
@@ -22,12 +15,14 @@ struct HeterogenousValueList {
     }
 protected:
     void print1(){std::cout<<"the end...\n";}
+ 
     template<typename T, typename ... args>
     void print1(T a1, args ... a2){
         std::cout<<a1<<std::endl;
         print1(a2...);
     }
  };
+
 using MyList = HeterogenousValueList<'a', 100, 'b'>;
 
 void print(){

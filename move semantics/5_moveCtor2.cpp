@@ -8,6 +8,8 @@ public:
 	MyClass(MyClass&& m) {std::cout<<"move-ctor\n";}
 };
 
+//---------------------------------------------------
+
 void foo(MyClass& m)
 {
 	std::cout<<"inside lvalue foo\n";
@@ -18,9 +20,11 @@ void foo(MyClass&& m)
 	std::cout<<"inside rvalue foo\n";
 }
 
+//---------------------------------------------------
 MyClass get(MyClass a){
 	return a;
 }
+//---------------------------------------------------
 
 int main(){
 	MyClass obj;

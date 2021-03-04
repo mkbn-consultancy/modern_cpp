@@ -27,9 +27,10 @@ int main()
 
 	// Data type of x is same as return type of fun1()
 	// and type of y is same as return type of fun2()
+	// Np function call is made!!
 	decltype(fun1()) a;
 	decltype(fun2()) b;
-
+	//check the type of a and b
 	std::cout << typeid(a).name() << std::endl;
 	std::cout << typeid(b).name() << std::endl;
 

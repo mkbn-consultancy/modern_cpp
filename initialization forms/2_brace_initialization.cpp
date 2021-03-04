@@ -1,25 +1,10 @@
 #include <string>
 #include <vector>
 #include <map>
-#include <iostream>
-
-class A
-{
-public:
-    A() { std::cout<<"default ctor\n";}
-    A(int) {std::cout<<"A(int) ctor\n";}
-    A(const A&) = delete; //{std::cout<<"copy ctor\n";}
-};
+// #include <iostream>
 
 int main()
 {
-    A a1{0};
-    A a2 = 0;
-
-    std::cout<<"-----------------------\n";
-
-    int a{0};
-
     std::string s{"hello"};
     std::string s2{s}; //copy constructor
 
