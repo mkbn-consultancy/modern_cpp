@@ -18,7 +18,7 @@ const int i = getNumber_nc();  //i will be initialized at run time and not compi
 constexpr int getNumber() { return 5; }
 int arr2[getNumber()];
 
-constexpr int j = getNumber_nc(); //ERROR!
+// constexpr int j = getNumber_nc(); //ERROR!
 
 constexpr int function3(){
     int x = 3;
@@ -46,10 +46,13 @@ int main()
     std::cin>>x;
     result = factorial(x);
 
-    const int a = function1();
-    //constexpr int b = funcion1(); //error!
-    constexpr int b = function2();
+    const int a = getNumber_nc();
+    // constexpr int b = getNumber_nc(); //error!
+    constexpr int b = function3();
     //b++;  //error!
 
+    int a;
+    const int b = a;
+    // constexpr int c = a; //error!
 }
 
