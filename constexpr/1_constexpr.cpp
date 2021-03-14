@@ -51,8 +51,14 @@ int main()
     constexpr int b = function3();
     //b++;  //error!
 
-    int a;
-    const int b = a;
+    std::cout<<"-----------\n";
+
+    int aa;
+    const int bb = a;
+    // std::cout<<aa<<" "<<bb<<std::endl;
     // constexpr int c = a; //error!
+
+    int yy = getNumber();   //runtime
+    constexpr int xx = getNumber(); //compilation time
 }
 

@@ -21,11 +21,11 @@ void printData(T& t){
         }
         std::cout<<std::endl;
     }
-    else if constexpr (std::is_pointer_v<T>){
-        std::cout<<*t<<std::endl;
+    else if constexpr (std::is_integral_v<T>){
+        std::cout<<"integral: "<<t<<std::endl;
     }
     else{
-        std::cout<<t<<std::endl;
+        std::cout<<"pointer: "<<*t<<std::endl;
     }
 }
 
@@ -36,6 +36,8 @@ int main(){
     std::cout<<get_value(x)<<std::endl;
     std::cout<<get_value(pX)<<std::endl;
 
+    printData(pX);
+    
     int arr[]{1,2,3,4,5};
     printData(arr);
 }

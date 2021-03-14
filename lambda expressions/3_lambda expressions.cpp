@@ -11,15 +11,13 @@ public:
 	}
 };
 
-int mainLambda() {
+int main() {
 	std::vector<int> vec{ 1,2,3,4,5,6,7,8 };
 	int sum = 0;
 	std::for_each(vec.begin(), vec.end(), 
-		[](int x)  {
-		int isOdd = (x % 2);
-		std::cout << x << "is " << (isOdd ? "odd" : "even") << ".\n";
-		return isOdd;
-	});
+		[&sum](int x)  {
+			sum+=x;
+		});
 	std::cout << "sum of elements: " << sum << "\n";
 
 	return 0;

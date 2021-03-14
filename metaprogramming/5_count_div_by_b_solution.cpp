@@ -1,7 +1,7 @@
 #include <iostream>
 
 
-template <bool isEven>
+template <bool T>
 struct if_div_;
 
 template <>

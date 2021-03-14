@@ -1,6 +1,8 @@
 #include <iostream>
 #include <type_traits>
 
+//turn the parameter to be its negative value
+
 int 
 negate(int i) { 
     std::cout<<"inside negate(int)\n";
@@ -33,12 +35,13 @@ struct B{
 
 void test2(){
     B obj;
-    // negate(obj); //error: no matching function
+    // negate(obj); //error: no matching function since obj is not arithmetic
     negate(1);
     negate(1.5);    //the first is not exact match, the second is error, third is exact match
 }
 
 ////////////////////////////////////
+
 template <class T>
 typename std::enable_if< std::is_arithmetic<T>::value, T >::type    //the return type is T
 foo(T t)
@@ -48,6 +51,14 @@ foo(T t)
     return t;
 }
 
+void test3()
+{
+    foo(3);
+
+    B obj;
+    // foo(obj);
+}
+
 ////////////////////////////////////
 int main(){
     std::cout<<"\n";
@@ -55,5 +66,8 @@ int main(){
     test1();
     std::cout<<"test2............\n";
     test2();
+    std::cout<<"\n";
+    std::cout<<"test3............\n";
+    test3();
     std::cout<<"\n";
 }

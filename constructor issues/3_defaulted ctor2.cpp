@@ -33,6 +33,22 @@ public:
     B() = default;  //still aggregate class. can write B b{5};
 };
 
+void testA_B(){
+    // A a{5};
+    B b{5};
+
+    int x = 5;
+
+    new(&x) A(); // Call for empty constructor, which does nothing
+    std::cout << x << std::endl;
+    
+    new(&x) B; // Call for default constructor
+    std::cout << x << std::endl;
+    
+    new(&x) B(); // Call for default constructor + Value initialization
+    std::cout << x << std::endl;
+
+}
 //---------------------------------------------
 // test difference between default and empty copy constructor
 
@@ -59,7 +75,7 @@ struct Q1
 struct F1
 {
     F1(int i) : x(i){}
-    F1(const F1& f){} //F is not aggregate class anymore!
+    F1(const F1& f){ std::cout<<"inside F1 copy ctor\n"; } //F is not aggregate class anymore!
     int x;
 };
 
@@ -69,37 +85,27 @@ void testCCtor()
     // F f1{3}; //F is not aggregated thus this initialization is not allowed
 
     //---------------------------------------------
-    F1 f1{3};
-    F1 f2(f1);   //no copy is made!
+    std::cout<<"F1 f1{3}: \n";
+    F1 f1{3};   //call the default ctor we declared. brace initializatio, 
+                //not aggregate initialization
+    std::cout<<"F1 f2(f1): \n";
+    F1 f2{f1};   //no copy is made!
+    F1 f3(f1);   //no copy is made!
+    std::cout<<"f1.x="<<f1.x<<std::endl;    
     std::cout<<"f2.x="<<f2.x<<std::endl;    //not initialized
-
-    //--------------------------------
-
+    std::cout<<"f3.x="<<f3.x<<std::endl;    //not initialized
 }
 
 //---------------------------------------------
 
 int main() 
 {
-    // A a{5};
-    B b{5};
-
+    //-----------------------------------
+    // test calling an empty default constructor {}
+   testA_B();
     //-----------------------------------
     // test calling an empty copy constructor {}
     testCCtor();
 
-    //-----------------------------------
-
-    int x = 5;
-
-    new(&x) A(); // Call for empty constructor, which does nothing
-    std::cout << x << std::endl;
-    
-    new(&x) B; // Call for default constructor
-    std::cout << x << std::endl;
-    
-    new(&x) B(); // Call for default constructor + Value initialization
-    std::cout << x << std::endl;
-    
     return 0; 
 } 

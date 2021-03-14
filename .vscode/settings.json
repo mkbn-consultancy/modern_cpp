@@ -55,6 +55,8 @@
         "xtree": "cpp",
         "xutility": "cpp",
         "set": "cpp",
-        "algorithm": "cpp"
+        "algorithm": "cpp",
+        "bit": "cpp",
+        "fstream": "cpp"
     }
 }

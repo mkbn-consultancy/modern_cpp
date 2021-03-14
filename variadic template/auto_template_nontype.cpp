@@ -7,15 +7,15 @@ constexpr auto const IntConstant42_a = constant1<int, 42>;
 template <auto value> constexpr auto constant2 = value;
 constexpr auto const IntConstant42_b = constant2<42>;
 
+/////////////////////////////////////////////////////////
+
 template <auto ... vs> 
-struct HeterogenousValueList {
+struct HeterogenousValueList 
+{
     size_t getListSize() const {return sizeof...(vs);}
-    void print(){
-        print1(vs...);
-    }
+    void print(){ print1(vs...); }
 protected:
     void print1(){std::cout<<"the end...\n";}
- 
     template<typename T, typename ... args>
     void print1(T a1, args ... a2){
         std::cout<<a1<<std::endl;
