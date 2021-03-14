@@ -27,13 +27,13 @@ class Data
 public:
     Data(const std::string& name, int id) : _name(name), _id(id){}
 
-    // std::string getDescription(const std::string& header){
-    //     std::string desc = header;
-    //     desc += "\n";
-    //     desc = desc + "name: " + _name + "\n";
-    //     desc = desc + "id: " + std::to_string(_id) + "\n";
-    //     return desc;
-    // }
+    std::string getDescription1(const std::string& header){
+        std::string desc = header;
+        desc += "\n";
+        desc = desc + "name: " + _name + "\n";
+        desc = desc + "id: " + std::to_string(_id) + "\n";
+        return desc;
+    }
 
     auto getDescription(){
         return [this](const std::string& header){
@@ -52,6 +52,9 @@ private:
 
 int test2(){
     Data d("product",10);
+    auto descF1 = d.getDescription1("=====");
+    std::cout<<descF1<<std::endl;
+
     auto descF = d.getDescription();
     std::cout<<descF("=====")<<std::endl;
 

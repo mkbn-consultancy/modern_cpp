@@ -16,16 +16,17 @@ auto get_value(T t) {
 template <typename T>
 void printData(T& t){
     if constexpr (std::is_array_v<T>){
+        std::cout<<sizeof(t)<<std::endl;
         for(auto x : t){
             std::cout<< x <<" ";
         }
         std::cout<<std::endl;
     }
-    else if constexpr (std::is_integral_v<T>){
-        std::cout<<"integral: "<<t<<std::endl;
+    else if constexpr (std::is_pointer_v<T>){
+        std::cout<<"pointer: "<< *t <<std::endl;
     }
     else{
-        std::cout<<"pointer: "<<*t<<std::endl;
+        std::cout<<"integral: "<< t <<std::endl;
     }
 }
 
@@ -37,7 +38,7 @@ int main(){
     std::cout<<get_value(pX)<<std::endl;
 
     printData(pX);
-    
+
     int arr[]{1,2,3,4,5};
     printData(arr);
 }
