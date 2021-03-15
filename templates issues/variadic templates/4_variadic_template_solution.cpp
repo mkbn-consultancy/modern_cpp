@@ -31,20 +31,24 @@ private:
 
 void create(){}
 
-// template<typename T, typename...Args>
-// T* create(Args...args){
-//     // std::cout<<a<<std::endl;
-//     // return std::make_shared<T>(args...);
-//     return new T(args...);
-// }
+template<typename T, typename...Args>
+T* create1(Args...args){
+    // std::cout<<a<<std::endl;
+    // return std::make_shared<T>(args...);
+    return new T(args...);
+}
 
 template<typename T, typename...Args>
-std::shared_ptr<T> create(Args...args){
+std::shared_ptr<T> create(Args&&...args){
     // std::cout<<a<<std::endl;
-    return std::make_shared<T>(args...);
+    return std::make_shared<T>(std::forward<Args>(args)...);
 }
 
 int main(){
+
+    Employee* p = create1<Employee>("Bob", 324567, 10000);
+    p->print();
+
     std::shared_ptr<int> p1 = create<int>(5);
     std::cout<<*p1<<std::endl;
 

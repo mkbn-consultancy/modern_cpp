@@ -14,7 +14,8 @@ public:
 public:
     int _var;
 };
-int test1(){
+
+void test1(){
     Example e;
     e.func();
     std::cout<<e._var<<std::endl;   //didn't changed
@@ -36,7 +37,7 @@ public:
     }
 
     auto getDescription(){
-        return [this](const std::string& header){
+        return [*this](const std::string& header){
             std::string desc = header;
             desc += "\n";
             desc = desc + "name: " + _name + "\n";
@@ -50,10 +51,11 @@ private:
     int _id;
 };
 
-int test2(){
+void test2(){
     Data d("product",10);
-    auto descF1 = d.getDescription1("=====");
-    std::cout<<descF1<<std::endl;
+
+    auto desc = d.getDescription1("=====");
+    std::cout<< desc <<std::endl;
 
     auto descF = d.getDescription();
     std::cout<<descF("=====")<<std::endl;
@@ -62,5 +64,15 @@ int test2(){
     //we delete it before we call the lambda.
     //this is why we should capture [*this].
     //this must be copyable.
+    Data* pD = new Data("product",10);
+    auto descF1 = pD->getDescription();
+
+    delete pD;
+
+    std::cout<<descF1("------")<<std::endl;
 }
 
+int main()
+{
+    test2();
+}

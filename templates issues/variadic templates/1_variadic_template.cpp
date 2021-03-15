@@ -8,6 +8,10 @@ void print(std::initializer_list<T> args){
     std::cout<<std::endl;
 }
 
+
+///////////////////////////////////////////////
+
+
 void print2(){
     std::cout<<std::endl;
 }
@@ -47,7 +51,7 @@ void print4(T&& a, Params&&...args){
 }
 
 int main(){
-    // print({1,2,3,4,5.5});   //ERROR! 
+    // print<int>({1,2,3,4,5.5});   //ERROR! 
     print2(1,2,3,4,5.5); 
 }
 

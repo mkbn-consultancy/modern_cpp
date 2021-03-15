@@ -43,3 +43,8 @@ int mainMoveSemantic1()
 	return 0;
 }
 
+int main()
+{
+	
+}
+

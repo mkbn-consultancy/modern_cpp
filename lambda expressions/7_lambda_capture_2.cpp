@@ -21,12 +21,12 @@ void example1(){
 
 void example2(){
     int a=4;
-    auto increase_local_a = [a]() mutable{
+    auto increase_local_a = [a]() mutable {
         std::cout<< a << std::endl;
         a++;
     };
 
-    auto decrease_ref_a = [&a]() mutable{
+    auto decrease_ref_a = [&a]() {
         std::cout<< a << std::endl;
         a--;
     };
@@ -43,20 +43,20 @@ void example2(){
 
 int main()
 {
-    A a, b;
-    std::cout<<"-----------\n";
-    auto fn1 = [=](){ a.print(); };
-    fn1(); 
-    std::cout<<"-----------\n";
-    auto fn2 = [&](){ a.print(); };
-    fn2();
-    std::cout<<"-----------\n";
-    // auto fn3 = [a](){ b.print(); }   //error. capturing only a and not b
-    //-----------------------
-    auto fn3 = [a](){ a.print(); }; //copy ctor is invoked
-    std::cout<<"-----------\n";
+    // A a, b;
+    // std::cout<<"-----------\n";
+    // auto fn1 = [=](){ a.print(); };
+    // fn1(); 
+    // std::cout<<"-----------\n";
+    // auto fn2 = [&](){ a.print(); };
+    // fn2();
+    // std::cout<<"-----------\n";
+    // // auto fn3 = [a](){ b.print(); }   //error. capturing only a and not b
+    // //-----------------------
+    // auto fn3 = [a](){ a.print(); }; //copy ctor is invoked
+    // std::cout<<"-----------\n";
 
-    example1();
+    // example1();
     std::cout<<"-----------\n";
     example2();
 }
