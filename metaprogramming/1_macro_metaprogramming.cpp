@@ -42,7 +42,7 @@ CREATE_OPERATOR_IMP(-)
 CREATE_OPERATOR_IMP(*)
 CREATE_OPERATOR_IMP(/)
 
-int main(){
+int main(){ 
   FP_Number f1(3.5), f2(4.5);
 
   std::cout<<(f1+f2).get()<<std::endl;

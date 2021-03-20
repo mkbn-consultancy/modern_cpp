@@ -1,13 +1,13 @@
 #include <iostream>
 
-template<typename T>              // (2)
+template<typename T>              
 struct removeConst{ 
-    typedef T type;               // (5)
+    typedef T type;               
 };
 
-template<typename T>              // (4)
+template<typename T>              
 struct removeConst<const T> { 
-    typedef T type;               // (5)
+    typedef T type;               
 };
 
 

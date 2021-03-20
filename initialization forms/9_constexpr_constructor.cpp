@@ -31,7 +31,7 @@ private:
 
 struct D2 : virtual BASE { 
     //error, D2 must not have virtual base class.
-    constexpr D2() : BASE(), mem(55) { }    
+    // constexpr D2() : BASE(), mem(55) { }    
 
 private:
     int mem; 
@@ -39,19 +39,19 @@ private:
 
 struct D3 : B2 {
     //error, D3 must not be a function try block.   
-    constexpr D3(int) try : B2(), mem(55) { } catch(int) { }
+    // constexpr D3(int) try : B2(), mem(55) { } catch(int) { }
 
     //error, illegal statement is in body.
-    constexpr D3(char) : B2(), mem(55) { mem = 55; } 
+    // constexpr D3(char) : B2(), mem(55) { mem = 55; } 
     
     //error, initializer for mem is not a constant expression. 
-    constexpr D3(double) : B2(), mem(i) { }
+    // constexpr D3(double) : B2(), mem(i) { }
 
     //error, implicit conversion is not constexpr. 
-    constexpr D3(const D1 &d) : B2(), mem(d) { }                   
+    // constexpr D3(const D1 &d) : B2(), mem(d) { }                   
 
     //error, parameter NL is a non-literal type.
-    constexpr D3(NL) : B2(), mem(55) { } 
+    // constexpr D3(NL) : B2(), mem(55) { } 
 
 private: 
     int mem;

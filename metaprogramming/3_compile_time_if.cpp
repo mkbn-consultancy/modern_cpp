@@ -21,7 +21,7 @@ struct if_<false, TrueResult, FalseResult>
 
 void testIf_()
 {
-    typename if_<true, int, void*>::result number(3); //result is in
+    typename if_<true, int, void*>::result number(3); //result is int
     typename if_<false, int, void*>::result pointer(&number); //result is void*
 
     typedef typename if_<(sizeof(void *) > sizeof(uint32_t)), 

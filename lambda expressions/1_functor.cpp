@@ -1,7 +1,9 @@
 #include <iostream>
 #include <vector>
 #include <algorithm>
+#include <set>
 
+std::set<int,
 
 bool isOdd(int x){
 	return x%2==1;
@@ -10,6 +12,15 @@ bool isOdd(int x){
 struct isOddF{
 	bool operator()(int x){ return x%2==1; }
 };
+
+void test(){
+	isOddF f;	
+	f.operator()(3);
+	f(3); //functor / function object
+}
+
+//////////////////////////////////////////////
+
 
 struct isEvenF{
 	bool operator()(int x){ return x%2==0; }
