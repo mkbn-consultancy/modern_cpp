@@ -45,7 +45,7 @@ void testAutoDecltype()
    struct A { int i = 0 ; int& value() { return i ; } } a;
    struct B { int i = 0 ; int value() { return i ; } } b;
 
-   //foo(a) = 20;
+//    foo(a) = 20;
         //Error: a.value() returns int& but foo(a) returns r-value.
    
    //Fine: b.value() returns int and foo(b) is also int.
@@ -54,7 +54,7 @@ void testAutoDecltype()
    //Fine: a.value() returns int& and bar's return value is auto& this int& (lvalue).
    bar(a) = 20;
    
-   //bar(b) ; // *** error: auto& always deduces to a reference
+//    bar(b) ; // *** error: auto& always deduces to a reference
         //Error: b.value() returns int and bar's return value is int&, 
         //       but we cannot return reference to local variable
 

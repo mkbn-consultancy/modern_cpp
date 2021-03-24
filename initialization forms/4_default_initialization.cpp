@@ -4,7 +4,7 @@ int main()
 {
     int n{}; 		//zero initialization: n is initialized to 0
     int *p1{}; 		//initialized to nullptr
-    double d{}; 	//initialized to 0.0
+    double d{4.5}; 	//initialized to 0.0
     char s1[12]{}; 	//all 12 chars are initialized to '\0’
     std::string s2{};	//same as: string s;
     char *p2 = new char [5]{}; // all five chars are initialized to '\0'

@@ -1,7 +1,7 @@
 struct A
 {
-  A() {};
-
+  A() = default;
+ 
 private:
   A(const A&);
   A& operator=(const A&);
@@ -15,6 +15,7 @@ struct B{
 
 void test_deleted_ctor()
 {
+    A a1;
     B b1;
     // B b2 = b1;  //error!
 }

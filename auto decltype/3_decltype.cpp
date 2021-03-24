@@ -3,6 +3,8 @@
 int fun1() { return 10; }
 char fun2() { return 'g'; }
 
+int func1(int i) {return 5;}
+
 template<class T1, class T2>
 T1 add1(const T1& a, const T2& b){
 	return a+b;	//always of type T1?
@@ -30,6 +32,8 @@ int main()
 	// Np function call is made!!
 	decltype(fun1()) a;
 	decltype(fun2()) b;
+	// decltype(func1(int)) c;
+
 	//check the type of a and b
 	std::cout << typeid(a).name() << std::endl;
 	std::cout << typeid(b).name() << std::endl;
