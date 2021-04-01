@@ -1,0 +1,16 @@
+std::filesystem::directory_entry::replace_filename
+ C++ Filesystem library std::filesystem::directory_entry 
+void replace_filename( const std::filesystem::path& p );
+void replace_filename( const std::filesystem::path& p, std::error_code& ec );
+(since C++17)
+Changes the filename of the directory entry.
+
+Effectively modifies the path member by path.replace_filename(p) and calls refresh to update the cached attributes. If an error occurs, the values of the cached attributes are unspecified.
+
+This function does not commit any changes to the filesystem.
+
+Parameters
+p	-	the path to append to the parent path of the currently stored path
+ec	-	out-parameter for error reporting in the non-throwing overload
+Return value
+(none)

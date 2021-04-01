@@ -9,6 +9,8 @@ int getVal(){
     return x;
 }
 
+void h(){}
+
 int main()
 {
     //L-Values and R-Values:

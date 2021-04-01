@@ -69,6 +69,19 @@
         "optional": "cpp",
         "random": "cpp",
         "string_view": "cpp",
-        "sstream": "cpp"
+        "sstream": "cpp",
+        "filesystem": "cpp",
+        "codecvt": "cpp",
+        "condition_variable": "cpp",
+        "future": "cpp",
+        "mutex": "cpp",
+        "bitset": "cpp",
+        "csignal": "cpp",
+        "unordered_set": "cpp",
+        "ranges": "cpp",
+        "shared_mutex": "cpp",
+        "stop_token": "cpp",
+        "cinttypes": "cpp",
+        "regex": "cpp"
     }
 }

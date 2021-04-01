@@ -1,22 +1,32 @@
 #include <iostream>
-#include <string>
 
-void a() {
-    throw std::string("from a");
+void test(int x){   
+    throw x;
+    //function is implicitly declared as noexcept(false)
+} 
+
+int someFunction() noexcept(true) {
+    //same as writing just noexcept. it is automatically noexcept(true)
+    //this means that no unwinding code is produced by the compiler!
+
+    int x = 4;
+    test(x);
+    return x;
 }
 
-void b(){
-    a();
+int someFunction_2(int x) noexcept(noexcept(test(x))) {
+    //same as writing just noexcept. it is automatically noexcept(true)
+    //this means that no unwinding code is produced by the compiler!
+
+    test(x);
+    return x;
 }
 
-void c() noexcept {
-    b();
-}
-
-int main()
-{
-    // c(); //will cause runtime error of std::terminate()
-
-    std::cout<<std::boolalpha<<noexcept(c())<<std::endl;    //true
-    std::cout<<std::boolalpha<<noexcept(b())<<std::endl;    //false
+int main(){
+    try{
+        someFunction(); //will crash with noexcept(true) and will work with noexcept(false)
+    }
+    catch(int x){
+        std::cout<<"caught the exception in the main\n";    
+    }
 }

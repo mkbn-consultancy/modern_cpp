@@ -30,7 +30,7 @@ int main() {
 	std::cout << "--------------\n";
 
 	//pass a r-value object
-	relayRV(get()); //r-value is passed with move ctor
+	relayRV(get(cobj)); //r-value is passed with move ctor
 	std::cout << "--------------\n";
 
 	return 0;
