@@ -9,47 +9,46 @@
 
 constexpr auto tenMill= 10000000;
 
-class MySingleton{
+class MySingleton_Lock{
 public:
-  static MySingleton* getInstance()
+  static MySingleton_Lock* getInstance()
   {
-    MySingleton* sin= instance.load();
+    MySingleton_Lock* sin= instance.load();
     if ( !sin ){
       std::lock_guard<std::mutex> myLock(myMutex);
       sin = instance.load();    //double check
       if( !sin ){
-        sin = new MySingleton(); //preparing the shared data to be publish
+        sin = new MySingleton_Lock(); //preparing the shared data to be publish
         instance.store(sin);    //only now the sin will be published to other threads
       }
     }   
     return sin;
   }
 private:
-  MySingleton()= default;
-  ~MySingleton()= default;
-  MySingleton(const MySingleton&)= delete;
-  MySingleton& operator=(const MySingleton&)= delete;
+  MySingleton_Lock()= default;
+  ~MySingleton_Lock()= default;
+  MySingleton_Lock(const MySingleton_Lock&)= delete;
+  MySingleton_Lock& operator=(const MySingleton_Lock&)= delete;
 private:
-  static std::atomic<MySingleton*> instance;
-  static std::mutex myMutex;
+  inline static std::atomic<MySingleton_Lock*> instance;
+  inline static std::mutex myMutex;
 };
 
 
-std::atomic<MySingleton*> MySingleton::instance;
-std::mutex MySingleton::myMutex;
+// std::atomic<MySingleton*> MySingleton::instance;
+// std::mutex MySingleton::myMutex;
 
 std::chrono::duration<double> getTime(){
 
   auto begin= std::chrono::system_clock::now();
   for ( size_t i= 0; i <= tenMill; ++i){
-       MySingleton::getInstance();
+       MySingleton_Lock::getInstance();
   }
   return std::chrono::system_clock::now() - begin;
   
 };
 
-
-int main(){
+void testMySingleton_Lock(){
 
     auto fut1= std::async(std::launch::async,getTime);
     auto fut2= std::async(std::launch::async,getTime);
@@ -62,8 +61,10 @@ int main(){
 
 }
 
-std::atomic<Singleton*> Singleton::m_instance;
-std::mutex Singleton::m_mutex;
+//-----------------------------------------------------
+
+std::atomic<Singleton*> MySingleton::m_instance;
+std::mutex MySingleton::m_mutex;
 
 Singleton* Singleton::getInstance() {
     Singleton* tmp = m_instance.load(std::memory_order_relaxed);

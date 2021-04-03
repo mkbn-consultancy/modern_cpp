@@ -4,16 +4,15 @@
 #include <iostream>
 
 struct Foo {
-    Foo(int num) : _num(num) {}
+    Foo(int num) : _num(num) {std::cout<<"creating a Foo object...\n";}
     void print_add(int i) const { std::cout << _num+i << '\n'; }
     int _num = 1;
 };
 
 //regular function
-void print_num(int i)
-{
-    std::cout << i << '\n';
-}
+void print_num(int i) { std::cout << i << '\n'; }
+void some_func(int i, double d) {}
+
 //function object
 struct PrintNum {
     void operator()(int i) const
@@ -28,6 +27,8 @@ int main()
     std::cout << "---Store free function\n";
     std::function<void(int)> f_display = print_num;
     f_display(-9);
+
+    std::function<void(int,double)> f_someFunc = some_func;
 
     // Storage lambda
     std::cout << "---Store lambda\n";
@@ -47,7 +48,7 @@ int main()
     std::function<void(const Foo&, int)> f_add_display = &Foo::print_add;
     const Foo foo(2000);
     f_add_display(foo, 1);
-    f_add_display(1000, 1); // A foo object is constructed by default?
+    f_add_display(1000, 1); // A foo object is constructed!
 
     // Calls stored in data member accessors
     std::cout << "\n Calls stored in data member accessors\n";
