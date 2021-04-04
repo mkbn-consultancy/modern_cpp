@@ -1,6 +1,6 @@
 #include <iostream>
 
-void test1(int x){   
+void test1(int x) noexcept(throw "hello"){   
     throw x;
     //function is implicitly declared as noexcept(false) since it throws
 } 

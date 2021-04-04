@@ -29,3 +29,4 @@ int main()
     exchanged= ai.compare_exchange_strong( tst_val, new_val );
     printValues();
 }
+

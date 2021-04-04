@@ -25,7 +25,7 @@ void signals(int index)
     std::this_thread::sleep_for(std::chrono::seconds(1));
     {
         std::lock_guard<std::mutex> lk(cv_m);
-        std::cerr << "Thread #"<<index<<" is notifying...\n";
+        std::cout << "Thread #"<<index<<" is notifying...\n";
     }
     cv.notify_all();
  
@@ -34,7 +34,7 @@ void signals(int index)
     {
         std::lock_guard<std::mutex> lk(cv_m);
         i = 1;
-        std::cerr << "Thread #"<<index<<" is notifying again...\n";
+        std::cout << "Thread #"<<index<<" is notifying again...\n";
     }
     cv.notify_all();    //threads will wake up since now i==1
 }

@@ -48,7 +48,7 @@ std::chrono::duration<double> getTime(){
   
 };
 
-void testMySingleton_Lock(){
+int main(){
 
     auto fut1= std::async(std::launch::async,getTime);
     auto fut2= std::async(std::launch::async,getTime);
@@ -62,7 +62,7 @@ void testMySingleton_Lock(){
 }
 
 //-----------------------------------------------------
-
+/*
 std::atomic<Singleton*> MySingleton::m_instance;
 std::mutex MySingleton::m_mutex;
 
@@ -96,3 +96,4 @@ Singleton* Singleton::getInstance() {
     }
     return tmp;
 }
+*/
