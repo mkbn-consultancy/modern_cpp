@@ -21,7 +21,6 @@ public:
 
     //2. addTask 
 
-    //3. 
 
 private:
     //1. vector of threads
