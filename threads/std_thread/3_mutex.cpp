@@ -8,7 +8,8 @@ void print_block (int n, char c) {
   // critical section (exclusive access to std::cout signaled by locking mtx):
   mtx.lock();
   for (int i=0; i<n; ++i) { 
-      std::this_thread::sleep_for(std::chrono::milliseconds(50));
+      using namespace std::chrono_literals;
+      std::this_thread::sleep_for(50ms);
       std::cout << c; 
   }
   std::cout << '\n';

@@ -73,5 +73,6 @@ void test2_wait_for_with_loop()
 
 int main()
 {
-    test2_wait_for_with_loop();
+    test1();
+    // test2_wait_for_with_loop();
 }
