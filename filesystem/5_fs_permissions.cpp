@@ -1,3 +1,5 @@
+//-------- MKBN Training and Consultancy --------//
+//--------------- miri@mkbn.co.il ---------------//
 //source: https://en.cppreference.com/w/cpp/filesystem/permissions 
 
 #include <fstream>

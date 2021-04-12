@@ -1,3 +1,5 @@
+//-------- MKBN Training and Consultancy --------//
+//--------------- miri@mkbn.co.il ---------------//
 // singletonAcquireRelease.cpp
 //source: https://www.modernescpp.com/index.php/thread-safe-initialization-of-a-singleton
 

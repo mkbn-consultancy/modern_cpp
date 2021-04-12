@@ -1,3 +1,5 @@
+//-------- MKBN Training and Consultancy --------//
+//--------------- miri@mkbn.co.il ---------------//
 //source: https://www.modernescpp.com/index.php/c-17-avoid-copying-with-std-string-view
 //compile it with full optimization: -O3
 //g++ -O3 .\4_substr_performance_test.cpp

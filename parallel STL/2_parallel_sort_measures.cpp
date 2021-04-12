@@ -1,3 +1,5 @@
+//-------- MKBN Training and Consultancy --------//
+//--------------- miri@mkbn.co.il ---------------//
 //source: https://devblogs.microsoft.com/cppblog/using-c17-parallel-algorithms-for-better-performance/
 
 // #include <stddef.h>

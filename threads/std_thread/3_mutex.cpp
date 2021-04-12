@@ -1,7 +1,10 @@
-#include <iostream>       // std::cout
-#include <thread>         // std::thread
-#include <mutex>          // std::mutex
+//-------- MKBN Training and Consultancy --------//
+//--------------- miri@mkbn.co.il ---------------//
+#include <iostream>       
+#include <thread>         
+#include <mutex>          
 #include <chrono>         // std::this_thread::sleep_for
+
 std::mutex mtx;           // mutex for critical section
 
 void print_block (int n, char c) {

@@ -1,3 +1,6 @@
+//-------- MKBN Training and Consultancy --------//
+//--------------- miri@mkbn.co.il ---------------//
+
 //compilation line: g++ -Wall -Wextra .\1_attributes.cpp
 
 //--------------------------------------------------------------------

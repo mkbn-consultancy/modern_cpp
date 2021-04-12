@@ -1,3 +1,5 @@
+//-------- MKBN Training and Consultancy --------//
+//--------------- miri@mkbn.co.il ---------------//
 
 //compilation line:  g++ -std=c++17 .\auto_template_nontype_2.cpp
 

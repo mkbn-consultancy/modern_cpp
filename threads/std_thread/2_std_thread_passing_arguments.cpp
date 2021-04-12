@@ -1,3 +1,6 @@
+//-------- MKBN Training and Consultancy --------//
+//--------------- miri@mkbn.co.il ---------------//
+//-----------------------------------------------//
 #include <iostream>
 #include <thread>
 
@@ -10,7 +13,7 @@ struct MyClass
     ~MyClass() {std::cout<<"insdie ~MyClass()\n";}
 };
 
-void func(MyClass& m)
+void func(MyClass& m, int& result)
 {
         std::cout<<"---inside func...\n";
         std::cout<<"---end of func...\n";
@@ -27,12 +30,13 @@ int main()
 
     MyClass m;  //call default constructor
     std::cout<<"---create a thread with func...\n";
-    std::thread theThread(func, std::ref(m));  //parameters are passed by value to the constructor
+    std::thread theThread(func, std::ref(m), std::ref(x));  //parameters are passed by value to the constructor
                                     //thus call copy constructor
 
     std::cout<<"---joining the thread...\n";
     if(theThread.joinable()){
         theThread.join();
     }
+    
     std::cout<<"---end of main...\n";
 }

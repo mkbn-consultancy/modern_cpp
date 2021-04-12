@@ -1,3 +1,5 @@
+//-------- MKBN Training and Consultancy --------//
+//--------------- miri@mkbn.co.il ---------------//
 //compilation line: g++ -std=c++17 -lstdc++fs .\1_path_object.cpp
 
 #include <iostream>

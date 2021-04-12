@@ -1,3 +1,5 @@
+//-------- MKBN Training and Consultancy --------//
+//--------------- miri@mkbn.co.il ---------------//
 // source: https://www.cplusplus.com/reference/functional/bind/
 
 #include <iostream>     // std::cout
@@ -14,6 +16,9 @@ struct MyPair {
 int main () {
   using namespace std::placeholders;    // adds visibility of _1, _2, _3,...
 
+  std::function<double(double,double)> func = my_divide;
+  my_divide(10,2);
+  
   // binding functions:
   auto fn_five = std::bind (my_divide,10,2);               // returns 10/2
   std::cout << fn_five() << '\n';                          // 5

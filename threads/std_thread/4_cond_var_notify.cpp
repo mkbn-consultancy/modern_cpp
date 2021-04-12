@@ -1,3 +1,6 @@
+//-------- MKBN Training and Consultancy --------//
+//--------------- miri@mkbn.co.il ---------------//
+
 #include <iostream>
 #include <condition_variable>
 #include <thread>
@@ -6,7 +9,7 @@
 std::condition_variable cv;
 std::mutex cv_m; // This mutex is used for three purposes:
                  // 1) to synchronize accesses to i
-                 // 2) to synchronize accesses to std::cerr
+                 // 2) to synchronize accesses to std:: cout
                  // 3) for the condition variable cv
 int i = 0;
  

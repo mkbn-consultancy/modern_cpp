@@ -1,3 +1,5 @@
+//-------- MKBN Training and Consultancy --------//
+//--------------- miri@mkbn.co.il ---------------//
 #ifdef __has_include
 #   if __has_include(<filesystem>)
 #       include <filesystem>

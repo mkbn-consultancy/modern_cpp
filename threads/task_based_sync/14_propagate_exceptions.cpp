@@ -1,3 +1,5 @@
+//-------- MKBN Training and Consultancy --------//
+//--------------- miri@mkbn.co.il ---------------//
 //source: https://vorbrodt.blog/2019/03/24/propagate-exceptions-across-threads/
 
 #include <iostream>

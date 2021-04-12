@@ -1,3 +1,5 @@
+//-------- MKBN Training and Consultancy --------//
+//--------------- miri@mkbn.co.il ---------------//
 #include <iostream>
 
 void test1(int x) noexcept(throw "hello"){   

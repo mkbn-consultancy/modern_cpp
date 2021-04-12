@@ -1,3 +1,5 @@
+//-------- MKBN Training and Consultancy --------//
+//--------------- miri@mkbn.co.il ---------------//
 //compilation line: g++ -std=c++98 cpp03_enum.cpp
 
 #include <iostream>

@@ -1,3 +1,5 @@
+//-------- MKBN Training and Consultancy --------//
+//--------------- miri@mkbn.co.il ---------------//
 //source : https://stackoverflow.com/questions/38501587/what-are-the-evaluation-order-guarantees-introduced-by-c17
 
 #include <iostream>

@@ -1,3 +1,5 @@
+//-------- MKBN Training and Consultancy --------//
+//--------------- miri@mkbn.co.il ---------------//
 #include <stdlib.h>
 #include <iostream>
 #include <memory>

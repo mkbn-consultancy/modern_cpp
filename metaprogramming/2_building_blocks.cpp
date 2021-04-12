@@ -1,3 +1,5 @@
+//-------- MKBN Training and Consultancy --------//
+//--------------- miri@mkbn.co.il ---------------//
 //Metaprogramming building blocks:
 //1. variables
 //2. functions

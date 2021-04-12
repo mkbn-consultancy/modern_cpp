@@ -1,3 +1,5 @@
+//-------- MKBN Training and Consultancy --------//
+//--------------- miri@mkbn.co.il ---------------//
 #include <iostream>
 #include <future>
 #include <thread>   //for std::this_thread::sleep_for

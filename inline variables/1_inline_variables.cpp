@@ -1,9 +1,11 @@
+//-------- MKBN Training and Consultancy --------//
+//--------------- miri@mkbn.co.il ---------------//
 #include <string>
 #include <string_view>
 
 struct S{
     //we can initialize inside the class only literal types!
-    const static std::string _str = "Hello World";
+    const static std::string _str = "Hello World";  //ERROR!
 };
 
 //the right way to do this:

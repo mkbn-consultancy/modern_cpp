@@ -1,4 +1,9 @@
+//-------- MKBN Training and Consultancy --------//
+//--------------- miri@mkbn.co.il ---------------//
 #include <iostream>
+
+//TODO: Implememnt count_div_by_b_numbers_till_a
+
 
 int main()
 {

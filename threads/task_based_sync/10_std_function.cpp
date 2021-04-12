@@ -1,3 +1,5 @@
+//-------- MKBN Training and Consultancy --------//
+//--------------- miri@mkbn.co.il ---------------//
 //source: https://programming.vip/docs/c-std-function-example.html
 
 #include <functional>

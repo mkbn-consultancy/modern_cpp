@@ -1,4 +1,5 @@
-//--------------------------------------------------------------------
+//-------- MKBN Training and Consultancy --------//
+//--------------- miri@mkbn.co.il ---------------//
 
 [[deprecated("[FUNC DEP] this version is not supported anymore")]]
 void oldFunction(){

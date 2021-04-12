@@ -1,6 +1,10 @@
+//-------- MKBN Training and Consultancy --------//
+//--------------- miri@mkbn.co.il ---------------//
 #include <string>
+#include <tuple>
 
 class DbHhandler{/*...*/};
+DbHhandler db;
 void process(const std::string& str){}
 
 //----------- solution 1 -----------//
@@ -54,14 +58,39 @@ void solution_4(){
 	}
 }
 
-std::pair<std::string, bool> read( DbHhandler* h);
+std::pair<std::string, bool> readFromDB( DbHhandler* h);
 
-int main()
+int main_4()
 {
     DbHhandler db;
-	auto rs = read(&db);
+	auto rs = readFromDB(&db);
 	if( rs.second){
 	  process(rs.first);
 	}
+	return 0;
 }
 
+//----------- solution 5 -----------//
+
+//std::tuple<std::string,bool> 
+auto readFromDB_5( DbHhandler* h)
+{
+  std::string s;
+  bool b;
+
+  /*read data from db into s, using the handler, saving the status in b*/
+ 
+  return make_tuple(s,b);
+}
+
+
+int main_5(){
+  std::string s; bool valid;
+
+  tie(s,valid) = readFromDB(&db);
+
+  if( valid){
+    process( s);
+  }
+  return 0;
+}

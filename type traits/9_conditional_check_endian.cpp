@@ -1,3 +1,5 @@
+//-------- MKBN Training and Consultancy --------//
+//--------------- miri@mkbn.co.il ---------------//
 //based on example in:
 //https://www.codeproject.com/Tips/1244491/Cplusplus-Compile-time-Conditional-Types
 //compilation line: -std=c++17 .\9_conditional_check_endian.cpp

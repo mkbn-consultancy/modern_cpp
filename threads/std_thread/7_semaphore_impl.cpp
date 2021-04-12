@@ -1,3 +1,6 @@
+//-------- MKBN Training and Consultancy --------//
+//--------------- miri@mkbn.co.il ---------------//
+
 //source: https://gist.github.com/sguzman/9594227
 
 #include <mutex>

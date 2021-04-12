@@ -1,3 +1,5 @@
+//-------- MKBN Training and Consultancy --------//
+//--------------- miri@mkbn.co.il ---------------//
 #include <vector>
 #include <thread>
 #include <iostream>
@@ -43,11 +45,13 @@ void test_simple_thread()
     std::cout<<"Lambda Function:\n";
     std::cout<<"-------------------\n";
     
-    auto lambdaFunc = [] {
+    int result = 0;
+    auto lambdaFunc = [&result] {
         for(int i=0; i<10; ++i){
             std::cout<<i<<" ";
         }
-        std::cout<<std::endl;       
+        std::cout<<std::endl;   
+        result = 10;    
     };
 
     std::thread t5([] {

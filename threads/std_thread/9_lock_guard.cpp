@@ -1,6 +1,8 @@
+//-------- MKBN Training and Consultancy --------//
+//--------------- miri@mkbn.co.il ---------------//
 // lock_guard example
-#include <iostream>       // std::cout
-#include <thread>         // std::thread
+#include <iostream>       
+#include <thread>         
 #include <mutex>          // std::mutex, std::lock_guard
 #include <stdexcept>      // std::logic_error
 

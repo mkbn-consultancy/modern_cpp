@@ -1,3 +1,5 @@
+//-------- MKBN Training and Consultancy --------//
+//--------------- miri@mkbn.co.il ---------------//
 int main()
 {
     //in c++ we have 4 basic categories of literals:
