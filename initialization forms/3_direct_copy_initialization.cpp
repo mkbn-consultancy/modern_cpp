@@ -8,12 +8,12 @@ struct Y {
 
 struct X { 
   X() { }
-  X(const Y&) { std::cout << "Direct initialization" << '\n'; }
+  X(const Y&) { std::cout << "[X(Y)] Direct initialization" << '\n'; }
 
   X(const X&) { std::cout << "Copy ctor" << '\n'; }
 };
 
-Y::operator X() { std::cout << "Copy initialization" << '\n'; return X(); }
+Y::operator X() { std::cout << "[Y::()] Copy initialization" << '\n'; return X(); }
 
 
 void f(int&){std::cout<<"f(int&)\n";}
