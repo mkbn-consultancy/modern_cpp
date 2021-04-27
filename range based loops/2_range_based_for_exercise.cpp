@@ -7,7 +7,7 @@
 
 int main()
 {
-    std::map<std::string,std::vector<std::string>> foodNames =
+    std::map<std::string,std::vector<std::string>> foodNames   
     {
         {"drinks",{"water", "milk", "juice"}},
         {"fruits",{"apple", "grapes"}},

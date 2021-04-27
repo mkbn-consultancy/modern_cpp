@@ -35,6 +35,7 @@ constexpr size_t factorial(int n){
     return factorial(n-1)*n;
 }
 
+constexpr int getSqr(int x) { return x*x; }
 
 int main()
 {
@@ -60,7 +61,7 @@ int main()
     // std::cout<<aa<<" "<<bb<<std::endl;
     // constexpr int c = a; //error!
 
-    int yy = getNumber();   //runtime
-    constexpr int xx = getNumber(); //compilation time
+    int x = 3;
+    constexpr int res1 = getSqr(3);
+    int res2 = getSqr(x);   //runtime
 }
-

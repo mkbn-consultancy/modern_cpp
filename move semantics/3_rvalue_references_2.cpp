@@ -11,9 +11,9 @@ void func(int&& x){ //refernce to r-values (temp, literals)
     x++;
 }
 
-// void func(const int& x){
-//     std::cout<<"inside func(const int&)\n";
-// }
+void func(const int& x){
+    std::cout<<"inside func(const int&)\n";
+}
 
 int main()
 {

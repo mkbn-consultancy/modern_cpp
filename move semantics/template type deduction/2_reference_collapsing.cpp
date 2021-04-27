@@ -1,5 +1,7 @@
 //-------- MKBN Training and Consultancy --------//
 //--------------- miri@mkbn.co.il ---------------//
+#include <iostream>
+
 typedef int&  lref;
 typedef int&& rref;
 
@@ -12,6 +14,10 @@ rref&  r3 = n; // type of r3 is int&: A&& & becomes A&
 
 rref&& r4 = 1; // type of r4 is int&&: A&& && becomes A&&
 
+void testTypes()
+{
+
+}
 //---------------------------------------------------------
 
 //Case 1: Passing param by reference/pointer
@@ -129,4 +135,9 @@ void testCase2_1()
 
     f(22);  // sending r-value!
             // T = int / param = int&&
+}
+
+int main()
+{
+        testTypes();
 }
