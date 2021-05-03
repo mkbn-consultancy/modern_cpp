@@ -5,7 +5,7 @@
 
 void test1()
 {
-	std::tuple<char,int,float> data(20,'g',17.5);
+	std::tuple<int,char,float> data(20,'g',17.5);
 
 	std::cout<<"the size of the tuple is: "<< 	std::tuple_size<decltype(data)>::value <<std::endl;
 }

@@ -17,7 +17,8 @@ int main()
 
     // auto fn = [ptr](){ ptr->print(); return *ptr; };    //Error! ptr has no copy constructor!
 
-    auto fn = [p = std::move(ptr)](){ p->print(); return *p; };   //C++14
+    auto fn = [p = std::move(ptr)](){ p->print(); return std::unique_ptr<A>(p.get()); };   //C++14
  
-    fn();
+    auto res = fn();
+    res->print();
 }

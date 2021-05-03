@@ -10,6 +10,7 @@ void manipulateFile(const std::string& fName){
     try{
         std::ifstream fin(fName);
         if(!fin.is_open()){
+            std::cout<<"[manipulateFile:] throw: ";
             throw std::runtime_error("cannot open file ");
         }
         else{
@@ -19,7 +20,7 @@ void manipulateFile(const std::string& fName){
     }
     catch(std::runtime_error& ex){
         std::runtime_error err(fName + ": " + ex.what());
-        std::cout<<"[in manipulateFile]: "<<err.what()<<std::endl;
+        std::cout<<err.what()<<std::endl;
         ex = err;
         throw;
     }
@@ -30,11 +31,12 @@ void processFiles(const std::vector<std::string>& files){
     //process all files
     for(auto f : files){
         try{
-                    manipulateFile(f);
+                manipulateFile(f);
             }
             catch(std::runtime_error& ex){
                 numBrokenPaths++;
                 if(numBrokenPaths > 0.3*files.size()){
+                    std::cout<<"[processFile:] throwing exception of threashold\n";
                     throw std::runtime_error("Too many broken paths, process stopped!");
                 }
             }

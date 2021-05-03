@@ -15,8 +15,8 @@ void foo(){}
 int main()
 {
     constexpr S s1;
-    // s1.changeX();
-    // s1.justNonConstFunc();
+    s1.changeX();
+    s1.justNonConstFunc();
     s1.constFunc();
 
     foo<s1._xVal>();

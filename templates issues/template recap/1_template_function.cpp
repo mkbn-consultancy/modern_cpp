@@ -8,6 +8,8 @@ return (t1 < t2) ? t2 : t1;
 
 int main() 
 { 
-	int highest = MyMax<int>(5,10); 
+	int highest = MyMax(5,10); 
 	char c = MyMax<char>('a', 'z'); 
+
+	vector<int> v = {1,2,3,4};
 }

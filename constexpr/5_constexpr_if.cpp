@@ -18,7 +18,7 @@ auto get_value(T t) {
 template <typename T>
 void printData(T& t){
     if constexpr (std::is_array_v<T>){
-        std::cout<<sizeof(t)<<std::endl;
+        std::cout<<"size: "<<sizeof(t)<<std::endl;
         for(auto x : t){
             std::cout<< x <<" ";
         }
@@ -36,10 +36,13 @@ int main(){
     int x = 5;
     int* pX = &x;
 
-    std::cout<<get_value(x)<<std::endl;
-    std::cout<<get_value(pX)<<std::endl;
+    // std::cout<<get_value(x)<<std::endl;
+    // std::cout<<get_value(pX)<<std::endl;
 
     printData(pX);
+
+    const int* p = new int[5]{9,8,7,6,5};
+    printData(p);
 
     int arr[]{1,2,3,4,5};
     printData(arr);

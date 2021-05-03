@@ -1,31 +1,36 @@
 //-------- MKBN Training and Consultancy --------//
 //--------------- miri@mkbn.co.il ---------------//
+
+//compile with g++ -std=c++98 .\4_exception_specifications.cpp
+
 #include <string>
 #include <iostream>
 
 struct ExceptionType{};
 
-// void processData( int, int ) throw(std::string, ExceptionType){
-//     throw ExceptionType();
-//     //no compilation error if we marked up the 
-//     //ExceptionType from the exception specification list
-// }
+void processData( int, int ) throw(std::string , ExceptionType){
+    std::cout<<"[processData:] throw ExceptionType\n";
+    throw ExceptionType();
+    //no compilation error if we marked up the 
+    //ExceptionType from the exception specification list
+}
 
-// void doAction (int op1, int op2 ) throw(std::string) {
-//    processData( op1, op2 ); // no compile-time error - but get runtime error!
-//    // ...
-// }
+void doAction (int op1, int op2 ) throw(std::string, ExceptionType) {
+   processData( op1, op2 ); // no compile-time error - but get runtime error if we remark ExceptionType!
+   // ...
+}
 
-void no_problem() throw(){
-    throw 5;
+void problem() throw(){
+    throw 5;    //runtime error
 }
 
 int main()
 {
-    // try{
-    //     doAction(1,2);
-    // }
-    // catch(...){
-    //     std::cout<<"Unknown Exception in main\n";
-    // }
+    try{
+        // doAction(1,2);
+        problem();
+    }
+    catch(...){
+        std::cout<<"[main:] Unknown Exception in main\n";
+    }
 }
