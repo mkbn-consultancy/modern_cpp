@@ -10,9 +10,10 @@ struct ExceptionType{};
 
 void processData( int, int ) throw(std::string , ExceptionType){
     std::cout<<"[processData:] throw ExceptionType\n";
-    throw ExceptionType();
+    // throw ExceptionType();
     //no compilation error if we marked up the 
     //ExceptionType from the exception specification list
+    throw 5;
 }
 
 void doAction (int op1, int op2 ) throw(std::string, ExceptionType) {
@@ -27,10 +28,13 @@ void problem() throw(){
 int main()
 {
     try{
-        // doAction(1,2);
-        problem();
+        doAction(1,2);
+        // problem();
     }
     catch(...){
         std::cout<<"[main:] Unknown Exception in main\n";
     }
 }
+
+//explanation to the runtime error:
+//https://compiler-explorer.com/z/xPoc79Mq5

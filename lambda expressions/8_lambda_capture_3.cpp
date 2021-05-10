@@ -7,13 +7,14 @@ public:
     Example() : _var{10} {}
     void func()
     {
-        [=]() { std::cout << "inside [=]: " << _var << std::endl; }();
+        int x = 0;
+        [=]() { std::cout << "inside [=]: " << _var << x << std::endl; }();
         [&]() { std::cout << "inside [&]: " << _var << std::endl; }(); 
-        [this]() {std::cout<< "inside [this]: " << _var <<std::endl; }();
-        [tmp = *this]() {std::cout<<"inside [temp=*this]: " << tmp._var <<std::endl; }(); //C++14
-        [*this]() mutable { ++_var; 
-                            std::cout<< "inside [*this]: " << _var <<std::endl; 
-                          }();  //C++17
+        [this]() {std::cout<< "inside [this]: " << _var << x  <<std::endl; }();
+        // [tmp = *this]() {std::cout<<"inside [temp=*this]: " << tmp._var <<std::endl; }(); //C++14
+        // [*this]() mutable { ++_var; 
+        //                     std::cout<< "inside [*this]: " << _var <<std::endl; 
+        //                   }();  //C++17
     }
 public:
     int _var;

@@ -17,8 +17,9 @@ void printNumbers()
 
 int main()
 {
-    // auto res = std::async(std::launch::async, printNumbers); 
-    auto res = std::async(std::launch::deferred, printNumbers); 
+    std::cout<<"--main started--\n";
+    auto res = std::async(std::launch::async, printNumbers); 
+    // auto res = std::async(std::launch::deferred, printNumbers); 
     std::this_thread::sleep_for(1s);
     std::cout<<"--main is waiting for the task--\n";
     res.get();

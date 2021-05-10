@@ -25,7 +25,7 @@ struct SimpleFunctor
 void test_simple_thread()
 {
     //creating the thread with a function pointer:
-     std::cout<<"-------------------\n";
+    std::cout<<"-------------------\n";
     std::cout<<"Function Pointer:\n";
     std::cout<<"-------------------\n";
     std::thread t1(simpleFunction); 
@@ -63,7 +63,8 @@ void test_simple_thread()
     );
     std::thread t6(lambdaFunc);
     t5.join();
-    t6.join();    
+    t6.join(); 
+    std::cout<<"[main] result of lambdaFunc: "<<result<<std::endl;   
 }
 
 void accumulator_function(const std::vector<int> &v, unsigned long long &sum, 

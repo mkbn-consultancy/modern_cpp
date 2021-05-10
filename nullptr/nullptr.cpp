@@ -20,6 +20,7 @@ void bar(std::shared_ptr<int> p){ std::cout<<"inside bar(shared_ptr<int>)"; }
 
 void testNullptr()
 {
+    // func(NULL);
     func(nullptr);
     int x = NULL;
     //int y = nullptr; //error!

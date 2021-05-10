@@ -7,6 +7,7 @@ struct A{
     A(const A&) { std::cout<<"inside A(const A&)\n"; }
     void print() { std::cout << "printing A\n"; }
     void print() const { std::cout << "printing const A\n"; }
+    void f(){}
 };
 
 void example1(){
@@ -45,9 +46,10 @@ void example2(){
 
 int main()
 {
-    // A a, b;
+    A a, b;
+
     // std::cout<<"-----------\n";
-    // auto fn1 = [=](){ a.print(); };
+    auto fn1 = [&](){ a.f(); };
     // fn1(); 
     // std::cout<<"-----------\n";
     // auto fn2 = [&](){ a.print(); };

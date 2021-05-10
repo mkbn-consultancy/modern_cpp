@@ -12,7 +12,7 @@ int main(int, char**)
 {
 	std::exception_ptr ep = nullptr;
 
-	std::thread t([&](){
+	std::thread t([&ep](){
 		try{
 			std::stringstream str;
 			str << std::this_thread::get_id();
@@ -33,7 +33,7 @@ int main(int, char**)
 		}
 		catch(std::exception& e)
 		{
-			std::cout << "[Thread " << std::this_thread::get_id() << "]: caught exception from thread " << e.what() << std::endl;
+			std::cout << "[THREAD " << std::this_thread::get_id() << "]: caught exception from thread " << e.what() << std::endl;
 		}
 	}
 }

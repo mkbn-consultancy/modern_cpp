@@ -17,7 +17,7 @@ void f(T) {  // Definition #2
 }
 
 void testSFINAE_1() {
-  f<Test>(10);  // Call #1.
+  // f<Test>(10);  // Call #1.
   f<int>(10);   // Call #2. Without error (even though there is no int::foo)
                 // thanks to SFINAE.
 }
@@ -72,3 +72,4 @@ void test3() {
 int main(){
   test3();
 }
+

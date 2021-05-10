@@ -19,7 +19,7 @@ int main()
     // fruits: apple grapes
     // vegetables: carrot potato cucumber
  
-    for(auto i : foodNames){
+    for(const auto& i : foodNames){
         std::cout<<i.first<<": ";
         for(auto j : i.second){
             std::cout<<j<<" ";

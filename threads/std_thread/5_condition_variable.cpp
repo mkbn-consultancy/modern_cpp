@@ -1,5 +1,8 @@
 //-------- MKBN Training and Consultancy --------//
 //--------------- miri@mkbn.co.il ---------------//
+
+//source: https://en.cppreference.com/w/cpp/thread/condition_variable
+
 #include <iostream>
 #include <string>
 #include <thread>
@@ -14,17 +17,19 @@ bool processed = false;
  
 void worker_thread()
 {
+    std::cout<<"[worker_thread:] locking the mutex and wait for data from main\n";
+
     // Wait until main() sends data
     std::unique_lock<std::mutex> lk(m);
     cv.wait(lk, []{return ready;});
  
     // after the wait, we own the lock.
-    std::cout << "Worker thread is processing data\n";
+    std::cout << "[worker_thread:] Worker thread is processing data\n";
     data += " after processing";
  
     // Send data back to main()
     processed = true;
-    std::cout << "Worker thread signals data processing completed\n";
+    std::cout << "[worker_thread:] Worker thread signals data processing completed\n";
  
     // Manual unlocking is done before notifying, to avoid waking up
     // the waiting thread only to block again (see notify_one for details)
@@ -34,6 +39,8 @@ void worker_thread()
  
 int main()
 {
+    std::cout<<"[main:] creating a thread\n";
+
     std::thread worker(worker_thread);
  
     data = "Example data";
@@ -41,7 +48,7 @@ int main()
     {
         std::lock_guard<std::mutex> lk(m);
         ready = true;
-        std::cout << "main() signals data ready for processing\n";
+        std::cout << "[main:] main() signals data ready for processing\n";
     }
     cv.notify_one();
  
@@ -50,7 +57,9 @@ int main()
         std::unique_lock<std::mutex> lk(m);
         cv.wait(lk, []{return processed;});
     }
-    std::cout << "Back in main(), data = " << data << '\n';
+    std::cout << "[main:] Back in main(), data = " << data << '\n';
  
     worker.join();
+
+    std::cout<<"[main:] main finished\n";
 }

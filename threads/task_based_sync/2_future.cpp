@@ -21,7 +21,9 @@ int main()
 {
     std::cout<<"--main started--\n";
     std::future<int> res = std::async(factorial,10); 
+
     std::this_thread::sleep_for(1s);
+    
     std::cout<<"--main is waiting for the task--\n";
     auto value = res.get();
     //now the shared stat inside the future is destroyed

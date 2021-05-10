@@ -7,8 +7,9 @@ using namespace std::chrono_literals;   //for using ms literal
 
 int sumUntil(std::promise<int>& num){
     std::cout<<"[sumUntil] entering the sumUntil function...\n";
-    auto val = num.get_future();
+    std::future<int> val = num.get_future();
     auto count = val.get();
+
     std::cout<<"[sumUntil] got the data, task is start running...";
     int result = 0;
     for(int i=1; i<=count; i++){
@@ -31,7 +32,7 @@ int main()
     //num is not ready test since we didn't call set_value yet
     //thus the task is blocked and wait
 
-    std::this_thread::sleep_for(3s);
+    std::this_thread::sleep_for(6s);
 
     std::cout<<"[main] set num in the promise\n";
     num.set_value(10);

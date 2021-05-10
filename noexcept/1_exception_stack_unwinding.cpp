@@ -42,4 +42,5 @@ int main(){
     catch(...){
         std::cout<<"[main:] Unknown Exception Caught!\n";
     }
+    std::cout<<"[main] finished\n";
 }
