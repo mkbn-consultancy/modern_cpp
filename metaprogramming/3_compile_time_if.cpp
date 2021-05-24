@@ -5,7 +5,7 @@
 
 //forward declaration
 template <bool Condition, typename TrueResult, typename FalseResult>
-class if_;
+struct if_;
 
 //declaring struct if_ with partial specialization (true)
 template <typename TrueResult, typename FalseResult>
@@ -60,24 +60,24 @@ void test_if_max_()
 
 /////////////////////////////
 
-template <bool isEven, int A>
+template <bool isEven>
 struct if_even_;
 
-template <int A>
-struct if_even_<true, A>
+template <>
+struct if_even_<true>
 {
     enum{result=true};
 };
 
-template <int A>
-struct if_even_<false, A>
+template <>
+struct if_even_<false>
 {
     enum{result=false};
 };
 
 void testIf_even_()
 {
-    std::cout<<"The number 12 is even? "<<if_even_<(12%2==0),12>::result<<std::endl;
+    std::cout<<"The number 12 is even? "<<if_even_<(12%2==0)>::result<<std::endl;
 }
 /////////////////////////////
 
