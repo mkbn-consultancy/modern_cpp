@@ -29,4 +29,5 @@ int main()
     decltype((ca->x)) s = r; //const double& 
 
     //s += 1.5;   //error since s is const!
+    decltype((a)) q = a;
 }

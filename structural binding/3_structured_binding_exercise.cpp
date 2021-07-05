@@ -15,7 +15,10 @@ int main()
 	sites.insert({ "Wikipedia", "Resources + References" }); 
 
     //TODO: use structured binding to print all keys & values in map
-
+	for(auto itr = sites.begin(); itr!=sites.end(); ++itr){
+		std::cout<<itr->first<<" : "<<itr->second<<std::endl;
+		// std::cout<<siteName<<" : "<<siteDescr<<std::endl;
+	}
 
 	return 0; 
 } 

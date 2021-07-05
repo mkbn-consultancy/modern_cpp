@@ -30,7 +30,7 @@ long double operator""_KG(long double x){	//OK. operator""  _KG is error.
 
 int main() 
 { 	
-	double distance = 4.5 _km; 
+	double distance = 4.5_km; 
 	std::cout << "(1) "<< distance << std::endl; 
 	std::cout << "(2) "<< 3.9_mm << std::endl;  
 	std::cout << "(3) "<< std::setprecision(8) << distance + 31.9_mm << std::endl; 

@@ -20,6 +20,13 @@ void f(int&){std::cout<<"f(int&)\n";}
 
 void f(const int&){std::cout<<"f(const int&)\n";}
 
+class A
+{
+public:
+  void f();
+// private:
+  int _x;
+};
 
 int main() { 
 
@@ -31,4 +38,8 @@ int main() {
   Y y;
   X x1 = y;
   // X x2(y);
+
+  std::cout<<"sizeof A: "<<sizeof(A)<<std::endl;
+
+  A a{3};
 }

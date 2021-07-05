@@ -23,7 +23,7 @@ void testNullptr()
     // func(NULL);
     func(nullptr);
     int x = NULL;
-    //int y = nullptr; //error!
+    // int y = nullptr; //error!
 
     int* p1 = NULL;
     int* p2 = nullptr;

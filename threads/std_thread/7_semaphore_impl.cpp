@@ -24,9 +24,9 @@ public:
 
   void wait(){
     std::unique_lock<std::mutex> lck(mtx);
-    while(count == 0){
-      cv.wait(lck); //unique_lock has a bool() operator to check if it is locked or not
-    }
+    // while(count == 0){
+      cv.wait(lck,[this](){return count>0;}); //unique_lock has a bool() operator to check if it is locked or not
+    // }
     //now the lck is locked by us so we can update count.
     --count;
   }

@@ -39,12 +39,34 @@ private:
   void f() {} // ok, just a private function
 };
 
+struct E
+{
+public:
+  int _x;
+  int _y;
+};
+
+class NonCopyable
+{
+public:
+  NonCopyable() = default;
+
+  int _x;
+private:
+  NonCopyable(const NonCopyable&) = default;
+};
+
 int main()
 {
+    NonCopyable nc{3};
+    // NonCopyable nc(3);
+
     S s{1};
 
     D_Aggregate d{5};   //OK!
-    // A_NotAggregate a{1};     //ERROR!
-    // B_NotAggregate b{1};     //ERROR!
-    // C_NotAggregate c{5};     //ERROR!
+  
+    A_NotAggregate a{1};     //ERROR!
+    B_NotAggregate b{1};     //ERROR!
+    C_NotAggregate c{5};     //ERROR!
+    E e{1,2};
 }

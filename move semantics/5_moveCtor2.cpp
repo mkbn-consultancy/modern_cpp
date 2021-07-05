@@ -7,7 +7,7 @@ class MyClass
 public:
 	MyClass() = default;
 	MyClass(const MyClass& m) {std::cout<<"copy-ctor\n";}
-	MyClass(MyClass&& m) {std::cout<<"move-ctor\n";}
+MyClass(MyClass&& m) {std::cout<<"move-ctor\n";}
 };
 
 //---------------------------------------------------
@@ -32,7 +32,7 @@ int main(){
 	MyClass obj;
 
 	std::cout<<"-----------\n";
-	foo(obj);
+	// foo(obj);
 
 	std::cout<<"-----------\n";
 	foo(get(obj));

@@ -1,12 +1,13 @@
 {
     "tasks": [
         {
-            "type": "cppbuild",
+            "type": "shell",
             "label": "C/C++: g++.exe build active file",
             "command": "C:\\Program Files\\mingw64\\bin\\g++.exe",
             "args": [
                 "-g",
-                "${file}"
+                "${file}",
+                "-o", "${fileDirname}\\a.exe"
             ],
             "options": {
                 "cwd": "${workspaceFolder}"
