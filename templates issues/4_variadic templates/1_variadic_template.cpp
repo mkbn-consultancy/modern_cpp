@@ -55,5 +55,6 @@ void print4(T&& a, Params&&...args){
 int main(){
     // print<int>({1,2,3,4,5.5});   //ERROR! 
     print2(1,2,3,4,5.5); 
+    print2();
 }
 

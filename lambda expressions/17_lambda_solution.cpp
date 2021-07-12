@@ -1,4 +1,4 @@
-#include <iostream>
+    #include <iostream>
 #include <algorithm>
 #include <vector>
 
@@ -38,7 +38,7 @@ auto minMax = [](auto begin, auto end) {
 // auto result2 = lambda("hello"); //result2 = "ooops"
 
 auto lambda4 = [](auto x){
-    if constexpr(std::is_same_v<decltype(x), int>){
+     if constexpr(std::is_same_v<decltype(x), int>){
         return x+1;
     }else{
         return "ooops...";

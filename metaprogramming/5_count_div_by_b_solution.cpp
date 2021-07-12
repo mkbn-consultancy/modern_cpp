@@ -4,19 +4,22 @@
 
 
 template <bool T>
-struct if_div_;
-
-template <>
-struct if_div_<true>
+struct if_div_
 {
-    enum{result=1};
+    enum{result = T};
 };
 
-template <>
-struct if_div_<false>
-{
-    enum{result=0};
-};
+// template <>
+// struct if_div_<true>
+// {
+//     enum{result=1};
+// };
+
+// template <>
+// struct if_div_<false>
+// {
+//     enum{result=0};
+// };
 
 //---------
 

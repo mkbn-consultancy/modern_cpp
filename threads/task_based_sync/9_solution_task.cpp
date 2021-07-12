@@ -34,8 +34,8 @@ int main()
             std::cout<<"[TASK id "<<std::this_thread::get_id()<<"]: got it!\n";
             int sum = 0;
             for(auto x : vecToSum){
-            std::this_thread::sleep_for(200ms);
-               std::cout<<"*";
+                std::this_thread::sleep_for(200ms);
+                std::cout<<"*";
                 sum += x;
             }
             
